@@ -7,6 +7,6 @@
 import {
   AppRegistry,
 } from 'react-native';
-import App from './app/App';
+import SPMApp from './app/SPMApp';
 
-AppRegistry.registerComponent('SPMHostDashboard', () => App);
+AppRegistry.registerComponent('SPMHostDashboard', () => SPMApp);

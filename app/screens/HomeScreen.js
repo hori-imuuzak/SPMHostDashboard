@@ -6,6 +6,7 @@ import {
 import * as navStyle from '../styles/navigation';
 
 import HomeNavigation from '../components/HomeNavigation';
+import DateFilterSelector from '../components/DateFilterSelector';
 
 export default class HomeScreen extends Component {
 
@@ -17,6 +18,7 @@ export default class HomeScreen extends Component {
 		return (
 			<View style={{ flex: 1, backgroundColor: '#f00' }}>
 				<HomeNavigation />
+				<DateFilterSelector {...this.props}/>
 			</View>
 		);
 	}

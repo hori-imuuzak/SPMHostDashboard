@@ -1,14 +1,18 @@
-import { createStore, combineReducers } from 'redux';
-import { navigation } from '../components/Navigation';
-
-import { navigationReducer } from '../reducers/NavigationReducer';
+import {
+	createStore,
+	combineReducers,
+	applyMiddleware,
+} from 'redux';
+import logger from 'redux-logger';
+import navigationReducer from '../reducers/NavigationReducer';
+import homeReducer from '../reducers/HomeReducer';
 
 const initialState = {};
 
-const store = createStore(
+export default store = createStore(
 	combineReducers({
 		navigation: navigationReducer,
-	}, initialState)
+		home: homeReducer,
+	}, initialState),
+	applyMiddleware(logger)
 )
-
-export default store;
