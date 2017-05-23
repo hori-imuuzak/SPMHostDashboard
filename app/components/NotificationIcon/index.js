@@ -13,11 +13,13 @@ export default class NotificationIcon extends Component {
         <Image
           source={require('../../resources/images/mail.png')}
           style={styles.icon}
-          />
-        <Text
-          style={styles.badge}>
-          {99/*通知の数*/}
-        </Text>
+        />
+        <View style={styles.badgeContainer}>
+          <Text
+            style={styles.badgeText}>
+            {99/*通知の数*/}
+          </Text>
+        </View>
       </View>
     );
   }
