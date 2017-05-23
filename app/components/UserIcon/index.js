@@ -12,7 +12,7 @@ export default class UserIcon extends Component {
     return (
       <Image
         defaultSource={require('../../resources/images/default_user.png')}
-        source={this.props.imageUrl}
+        source={{ uri: this.props.imageUrl }}
         style={styles.image}
       />
     );
