@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import styles from './style';
 
-import WideText from '../WideText';
+import HostNamePicker from '../HostNamePicker';
 import UserIcon from '../UserIcon';
 import NotificationIcon from '../NotificationIcon';
 
@@ -21,7 +21,7 @@ export default class HomeNavigation extends Component {
             <UserIcon />
           </View>
           <View style={styles.hostName}>
-            <WideText fontSize={16}>{"ホスト名ほげほげ株式会社"}</WideText>
+            <HostNamePicker />
           </View>
           <View style={styles.notification}>
             <NotificationIcon />

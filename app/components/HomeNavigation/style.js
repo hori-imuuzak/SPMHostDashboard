@@ -26,9 +26,7 @@ const styles = StyleSheet.create({
   },
 
   hostName: {
-    flex: 1.6,
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 2.5,  
   },
 
   notification: {

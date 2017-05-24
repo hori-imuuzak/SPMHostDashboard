@@ -29,11 +29,11 @@ export default class DateFilterSelector extends Component {
           <DateFilterButton 
             selected={this.props.dateFilterType === 3}
             onSelect={this.props.doFilterLast30Days}
-            >-31日</DateFilterButton>
+            >31日間</DateFilterButton>
           <DateFilterButton 
             selected={this.props.dateFilterType === 4}
             onSelect={this.props.doFilterLast365Days}
-            >-365日</DateFilterButton>
+            >365日間</DateFilterButton>
         </View>
       </View>
     );
