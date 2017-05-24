@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
 	View,
 	Image,
+	Platform,
 } from 'react-native';
 import * as navStyle from '../styles/navigation';
 
@@ -14,12 +15,24 @@ export default class AccountSettingScreen extends Component {
 	}
 }
 
-AccountSettingScreen.navigationOptions = {
-	tabBarLabel: 'アカウント',
-	tabBarIcon: ({ tintColor }) => (
-		<Image
-			source={require('../resources/images/icon_accounts.png')}
-			style={navStyle.styles.icon}
-			/>
-	),
-};
+if (Platform.OS === 'ios') {
+	AccountSettingScreen.navigationOptions = {
+		tabBarLabel: 'アカウント',
+		tabBarIcon: ({ tintColor }) => (
+			<Image
+				source={require('../resources/images/icon_accounts.png')}
+				style={navStyle.styles.icon}
+				/>
+		),
+	};
+} else {
+	AccountSettingScreen.navigationOptions = {
+		drawerLabel: 'アカウント',
+		drawerIcon: ({ tintColor }) => (
+			<Image
+				source={require('../resources/images/icon_accounts.png')}
+				style={navStyle.styles.icon}
+				/>
+		),
+	};
+}

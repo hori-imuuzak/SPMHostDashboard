@@ -4,9 +4,4 @@ import {
 
 } from 'react-native';
 
-export default DrawerNavigator (
-  Screen.route, {
-    tabBarOptions: {
-      showIcon: true,
-    }
-  });
+export default DrawerNavigator (Screen.route);

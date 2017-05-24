@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
 	View,
 	Image,
+	Platform,
 } from 'react-native';
 import * as navStyle from '../styles/navigation';
 
@@ -27,12 +28,24 @@ export default class HomeScreen extends Component {
 	}
 }
 
-HomeScreen.navigationOptions = {
-	tabBarLabel: 'ホーム',
-	tabBarIcon: ({ tintColor }) => (
-		<Image
-			source={require('../resources/images/icon_home.png')}
-			style={navStyle.styles.icon}
-			/>
-	),
-};
+if (Platform.OS === 'ios') {
+	HomeScreen.navigationOptions = {
+		tabBarLabel: 'ホーム',
+		tabBarIcon: ({ tintColor }) => (
+			<Image
+				source={require('../resources/images/icon_home.png')}
+				style={navStyle.styles.icon}
+				/>
+		),
+	};
+} else {
+	HomeScreen.navigationOptions = {
+		drawerLabel: 'ホーム',
+		drawerIcon: ({ tintColor }) => (
+			<Image
+				source={require('../resources/images/icon_home.png')}
+				style={navStyle.styles.icon}
+				/>
+		),
+	};
+}
