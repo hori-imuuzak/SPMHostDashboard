@@ -7,6 +7,7 @@ import * as navStyle from '../styles/navigation';
 
 import HomeNavigation from '../components/HomeNavigation';
 import DateFilterSelector from '../components/DateFilterSelector';
+import Dashboard from '../components/Dashboard';
 import Graph from '../components/DummyGraph';
 
 export default class HomeScreen extends Component {
@@ -20,7 +21,7 @@ export default class HomeScreen extends Component {
 			<View style={{ flex: 1, backgroundColor: '#f00' }}>
 				<HomeNavigation />
 				<DateFilterSelector {...this.props}/>
-				<Graph />
+				<Dashboard />
 			</View>
 		);
 	}
