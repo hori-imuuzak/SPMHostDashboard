@@ -9,26 +9,82 @@ export default class PanelItem extends Component {
 
   constructor(props) {
     super(props);
-
-    
   }
 
   // 金額の場合
   renderTypeMoney() {
+    let [value, unitText] = [
+      this.props.value,
+      this.props.unitText,
+    ];
 
+    return this.renderValue(
+      <View
+        style={{
+          flex: 1.6,
+          justifyContent: 'center',
+          flexDirection: 'row',
+        }}>
+        <Text
+          style={{
+            alignSelf: 'center',
+            paddingTop: 10,
+          }}>
+          {unitText}
+        </Text>
+        <Text
+          style={{
+            fontSize: 28,
+            color: '#0f0',
+            alignSelf: 'center',
+          }}>
+          {value}
+        </Text>
+      </View>
+    )
   }
 
   // 金額でない場合
   renderTypeAmount() {
-    let [label, value, unitText] = [
-      this.props.label,
+    let [value, unitText] = [
       this.props.value,
       this.props.unitText,
     ];
+
+    return this.renderValue(
+      <View
+        style={{
+          flex: 1.6,
+          justifyContent: 'center',
+          flexDirection: 'row',
+        }}>
+        <Text
+          style={{
+            fontSize: 28,
+            color: '#0f0',
+            alignSelf: 'center',
+          }}>
+          {value}
+        </Text>
+        <Text
+          style={{
+            alignSelf: 'center',
+            paddingTop: 10,
+          }}>
+          {unitText}
+        </Text>
+      </View>
+    )
+  }
+
+  renderValue(valueElement) {
+    let label = this.props.label;
     let marginStyle = (this.props.isLeft ? styles.panel_left : styles.panel_right);
 
+    let transparentStyle = (this.props.label ? null : styles.blankPanel);
+
     return (
-      <View style={[styles.panel, marginStyle]}>
+      <View style={[styles.panel, marginStyle, transparentStyle]}>
         <View
           style={{
             flex: 1.4,
@@ -42,28 +98,7 @@ export default class PanelItem extends Component {
             {label}
           </Text>
         </View>
-        <View
-          style={{
-            flex: 1.6,
-            justifyContent: 'center',
-            flexDirection: 'row',
-          }}>
-          <Text
-            style={{
-              fontSize: 28,
-              color: '#0f0',
-              alignSelf: 'center',
-            }}>
-            {value}
-          </Text>
-          <Text
-            style={{
-              alignSelf: 'center',
-              paddingTop: 10,
-            }}>
-            {unitText}
-          </Text>
-        </View>
+        {valueElement}
       </View>
     )
   }

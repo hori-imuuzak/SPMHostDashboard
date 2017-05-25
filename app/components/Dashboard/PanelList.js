@@ -13,11 +13,17 @@ export default class PanelList extends Component {
   constructor(props) {
     super(props);
 
+    // 奇数の場合は空のパネルを追加する
+    let dataList = props.panelValues.concat();
+    if (this.props.panelValues.length % 2 === 1) {
+      dataList.push({});
+    }
+
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2,
     });
     this.state = {
-      dataSource: ds.cloneWithRows(props.panelValues),
+      dataSource: ds.cloneWithRows(dataList),
     };
 
     this.renderHeader = this.renderHeader.bind(this);
@@ -55,6 +61,7 @@ export default class PanelList extends Component {
           contentContainerStyle={styles.panelList}
           renderRow={this.renderRow}
           dataSource={this.state.dataSource}
+          
         />
       </View>
     );

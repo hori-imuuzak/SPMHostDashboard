@@ -7,8 +7,8 @@ export default styles = StyleSheet.create({
     maxHeight: 300,
     backgroundColor: 'white',
 
-    marginLeft: 8,
-    marginRight: 8,
+    marginLeft: 16,
+    marginRight: 16,
 
     alignItems: 'center',
     justifyContent: 'center',
