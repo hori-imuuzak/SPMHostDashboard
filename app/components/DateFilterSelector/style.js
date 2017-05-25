@@ -5,8 +5,8 @@ import {
 export default styles = StyleSheet.create({
   container: {
     height: 50,
-    marginLeft: 8,
-    marginRight: 8,
+    paddingLeft: 8,
+    paddingRight: 8,
     backgroundColor: 'white',
   },
 

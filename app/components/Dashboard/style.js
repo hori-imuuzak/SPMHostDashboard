@@ -55,6 +55,14 @@ export default styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
+  panelListHeader: {
+    paddingLeft: 8,
+    fontSize: 16,
+    marginTop: 24,
+    justifyContent: 'center',
+    color: 'gray',
+  },
+
   panelList: {
     flexDirection: 'row',  
     flexWrap: 'wrap',

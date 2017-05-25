@@ -32,6 +32,7 @@ export default class DashboardPage extends Component {
         }}>
         <Graph />
         <PanelList
+          headerText="ゲストからのアクション"
           panelValues={
             [
               {

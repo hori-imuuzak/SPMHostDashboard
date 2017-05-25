@@ -1,5 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import {
+  View,
+  Text,
   ListView,
 } from 'react-native';
 import styles from './style';
@@ -18,7 +20,17 @@ export default class PanelList extends Component {
       dataSource: ds.cloneWithRows(props.panelValues),
     };
 
+    this.renderHeader = this.renderHeader.bind(this);
     this.renderRow = this.renderRow.bind(this);
+  }
+
+  renderHeader() {
+    return (
+      <Text
+        style={styles.panelListHeader}>
+        {this.props.headerText}
+      </Text>
+    );
   }
 
   renderRow(row) {
@@ -37,15 +49,19 @@ export default class PanelList extends Component {
 
   render() {
     return (
-      <ListView
-        contentContainerStyle={styles.panelList}
-        renderRow={this.renderRow}
-        dataSource={this.state.dataSource}
-      />
+      <View>
+        {this.renderHeader()}
+        <ListView
+          contentContainerStyle={styles.panelList}
+          renderRow={this.renderRow}
+          dataSource={this.state.dataSource}
+        />
+      </View>
     );
   }
 }
 
 PanelList.propTypes = {
+  headerText: PropTypes.string,
   panelValues: PropTypes.arrayOf(PropTypes.any),
 };

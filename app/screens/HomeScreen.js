@@ -19,7 +19,7 @@ export default class HomeScreen extends Component {
 
 	render() {
 		return (
-			<View style={{ flex: 1, backgroundColor: '#f00' }}>
+			<View style={{ flex: 1, backgroundColor: '#fafafa' }}>
 				<HomeNavigation />
 				<DateFilterSelector {...this.props}/>
 				<Dashboard />
