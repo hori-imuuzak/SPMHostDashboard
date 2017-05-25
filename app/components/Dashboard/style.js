@@ -71,7 +71,7 @@ export default styles = StyleSheet.create({
   panel: {
     flex: 1,
     backgroundColor: 'white',
-    height: 80,
+    height: 100,
     padding: 10,
     marginTop: 8,
     marginBottom: 8,

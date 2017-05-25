@@ -31,7 +31,7 @@ export default class PanelItem extends Component {
       <View style={[styles.panel, marginStyle]}>
         <View
           style={{
-            flex: 1,
+            flex: 1.4,
             justifyContent: 'center',
             alignItems: 'center',
           }}>
@@ -44,7 +44,7 @@ export default class PanelItem extends Component {
         </View>
         <View
           style={{
-            flex: 2,
+            flex: 1.6,
             justifyContent: 'center',
             flexDirection: 'row',
           }}>
@@ -59,6 +59,7 @@ export default class PanelItem extends Component {
           <Text
             style={{
               alignSelf: 'center',
+              paddingTop: 10,
             }}>
             {unitText}
           </Text>
