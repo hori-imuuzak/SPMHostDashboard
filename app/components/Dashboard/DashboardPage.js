@@ -6,8 +6,9 @@ import {
 } from 'react-native';
 
 import Graph from '../../components/DummyGraph';
+import PanelItem from './PanelItem';
 
-export default class DashboardItem extends Component {
+export default class DashboardPage extends Component {
 
   constructor(props) {
     super(props);
@@ -29,6 +30,12 @@ export default class DashboardItem extends Component {
           flex: 1,
         }}>
         <Graph />
+        <PanelItem
+          label="予約リクエスト数"
+          text="24"
+          unitText="件"
+          type={PanelItem.Type.Amount}
+           />
         <Graph />
         <Graph />
         <Graph />

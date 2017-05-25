@@ -54,4 +54,11 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
     fontWeight: 'bold',
   },
+
+  panel: {
+    backgroundColor: 'white',
+    flex: 1,
+    height: 120,
+    alignItems: 'center',
+  }
 })

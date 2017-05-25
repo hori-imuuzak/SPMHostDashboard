@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import styles from './style';
 
-export default class DashboardItemHeader extends Component {
+export default class DashboardHeader extends Component {
   render() {
     return (
       <View style={styles.header}>

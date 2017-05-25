@@ -7,8 +7,8 @@ import {
 } from 'rn-viewpager';
 import styles from './style';
 
-import DashboardItemHeader from './DashboardItemHeader';
-import DashboardItem from './DashboardItem';
+import DashboardHeader from './DashboardHeader';
+import DashboadPage from './DashboardPage';
 
 export default class Dashboard extends Component {
 
@@ -20,19 +20,19 @@ export default class Dashboard extends Component {
     return (
       <View
         style={styles.container}>
-        <DashboardItemHeader />
+        <DashboardHeader />
         <ViewPager
           style={styles.viewPager}
           initialPage={0}
           scrollEnabled>
           <View style={{ flex: 1 }}>
-            <DashboardItem />
+            <DashboadPage />
           </View>
           <View style={{ flex: 1 }}>
-            <DashboardItem />
+            <DashboadPage />
           </View>
           <View style={{ flex: 1 }}>
-            <DashboardItem />
+            <DashboadPage />
           </View>
         </ViewPager>
       </View>
