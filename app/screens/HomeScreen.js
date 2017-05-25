@@ -3,6 +3,7 @@ import {
 	View,
 	Image,
 	Platform,
+	ScrollView,
 } from 'react-native';
 import * as navStyle from '../styles/navigation';
 

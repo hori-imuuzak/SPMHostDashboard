@@ -1,4 +1,7 @@
-import { StyleSheet } from 'react-native';
+import {
+  StyleSheet,
+  Platform,
+} from 'react-native';
 
 export default styles = StyleSheet.create({
   container: {
@@ -65,14 +68,14 @@ export default styles = StyleSheet.create({
 
   panelList: {
     justifyContent: 'center',
-    flexDirection: 'row',  
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
 
   panel: {
     backgroundColor: 'white',
     height: 100,
-    width: 170,
+    width: (Platform.OS === 'ios' ? 170 : 160), //これはひどいかもしれない・・・
     padding: 10,
     marginTop: 8,
     marginBottom: 8,
