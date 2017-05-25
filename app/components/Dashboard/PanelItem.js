@@ -9,6 +9,8 @@ export default class PanelItem extends Component {
 
   constructor(props) {
     super(props);
+
+    
   }
 
   // 金額の場合
@@ -17,25 +19,45 @@ export default class PanelItem extends Component {
   }
 
   // 金額でない場合
-  renderTypeAmount(label, value, unitText) {
+  renderTypeAmount() {
+    let [label, value, unitText] = [
+      this.props.label,
+      this.props.value,
+      this.props.unitText,
+    ];
     return (
       <View style={styles.panel}>
         <View
-          style={{ flex: 1 }}>
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
           <Text
-            style={{ textAlign: 'center' }}>
+            style={{
+              textAlign: 'center',
+            }}>
             {label}
           </Text>
         </View>
         <View
-          style={{ flex: 1 }}>
+          style={{
+            flex: 2,
+            justifyContent: 'center',
+            flexDirection: 'row',
+          }}>
           <Text
             style={{
-              fontSize: 24,
+              fontSize: 28,
+              color: '#0f0',
+              alignSelf: 'center',
             }}>
             {value}
           </Text>
-          <Text>
+          <Text
+            style={{
+              alignSelf: 'center',
+            }}>
             {unitText}
           </Text>
         </View>

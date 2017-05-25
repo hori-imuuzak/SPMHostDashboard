@@ -55,10 +55,16 @@ export default styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
+  panelList: {
+    justifyContent: 'center',
+    flexDirection: 'row',  
+    flexWrap: 'wrap',
+  },
+
   panel: {
     backgroundColor: 'white',
-    flex: 1,
-    height: 120,
-    alignItems: 'center',
-  }
+    width: 120,
+    height: 80,
+  },
+
 })

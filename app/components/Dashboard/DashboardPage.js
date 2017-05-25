@@ -7,6 +7,7 @@ import {
 
 import Graph from '../../components/DummyGraph';
 import PanelItem from './PanelItem';
+import PanelList from './PanelList';
 
 export default class DashboardPage extends Component {
 
@@ -30,12 +31,24 @@ export default class DashboardPage extends Component {
           flex: 1,
         }}>
         <Graph />
-        <PanelItem
-          label="予約リクエスト数"
-          text="24"
-          unitText="件"
-          type={PanelItem.Type.Amount}
-           />
+        <PanelList
+          panelValues={
+            [
+              {
+                label: "予約リクエスト数",
+                value: "24",
+                unitText: "件",
+                type: PanelItem.Type.Amount,
+              },
+              {
+                label: "お問い合わせ数",
+                value: "8",
+                unitText: "件",
+                type: PanelItem.Type.Amount,
+              },
+            ]
+          }
+          />
         <Graph />
         <Graph />
         <Graph />
