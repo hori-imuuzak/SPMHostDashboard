@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: 300,
     maxHeight: 300,
     backgroundColor: 'white',
 
