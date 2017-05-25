@@ -22,8 +22,8 @@ export default class HomeScreen extends Component {
 		return (
 			<View style={{ flex: 1, backgroundColor: '#f6f6f6' }}>
 				<HomeNavigation />
-				<DateFilterSelector {...this.props}/>
-				<Dashboard />
+				<DateFilterSelector {...this.props} />
+				<Dashboard {...this.props} />
 			</View>
 		);
 	}

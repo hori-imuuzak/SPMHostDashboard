@@ -5,6 +5,8 @@ import * as actions from '../actions/HomeAction';
 
 const mapStateToProps = (state) => ({
   dateFilterType: state.home.filterType,
+  spaceName: state.home.spaceName,
+  spaceIndex: state.home.spaceIndex,
 });
 
 const mapActionToProps = (dispatch) => (
