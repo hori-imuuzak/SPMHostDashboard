@@ -7,5 +7,51 @@ export default styles = StyleSheet.create({
 
   viewPager: {
     flex: 1,
+    paddingTop: 16,
+  },
+
+  header: {
+    backgroundColor: 'white',
+    maxHeight: 40,
+    flex: 1,
+    flexDirection: 'row',
+  },
+
+  headerPrev: {
+    flex: 0.1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderStyle: 'solid',
+    borderBottomWidth: 1,
+    borderBottomColor: 'gray',
+  },
+
+  headerNext: {
+    flex: 0.1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderStyle: 'solid',
+    borderBottomWidth: 1,
+    borderBottomColor: 'gray',
+  },
+
+  headerButton: {
+    height: 16,
+    tintColor: '#0f0',
+  },
+
+  headerTitleContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    borderStyle: 'solid',
+    borderBottomWidth: 2,
+    borderBottomColor: '#0f0',
+  },
+
+  headerTitle: {
+    fontSize: 18,
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontWeight: 'bold',
   },
 })

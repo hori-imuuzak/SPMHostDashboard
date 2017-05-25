@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text,
 } from 'react-native';
 import {
   ViewPager,
 } from 'rn-viewpager';
-
 import styles from './style';
+
+import DashboardItemHeader from './DashboardItemHeader';
 import DashboardItem from './DashboardItem';
 
 export default class Dashboard extends Component {
@@ -20,17 +20,7 @@ export default class Dashboard extends Component {
     return (
       <View
         style={styles.container}>
-        <View style={{
-          height: 40,
-          justifyContent: 'center',
-        }}>
-          <Text style={{
-            textAlign: 'center',
-            justifyContent: 'center',
-            fontWeight: 'bold',
-            fontSize: 18,
-          }}>すべてのスペース</Text>
-        </View>
+        <DashboardItemHeader />
         <ViewPager
           style={styles.viewPager}
           initialPage={0}
