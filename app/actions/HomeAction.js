@@ -54,3 +54,10 @@ export const showPrevSpace = () => {
     type: ActionTypes.PrevSpace,
   };
 }
+
+export const setSpaceIndex = (spaceIndex) => {
+  return {
+    type: ActionTypes.ScrollNextSpace,
+    payload: spaceIndex,
+  };
+}

@@ -77,6 +77,11 @@ const changeSpaceReducer = (state = {}, action = {}) => {
       state.spaceIndex = curSpaceIndex;
       return state;
 
+    case ActionTypes.ScrollNextSpace:
+      state.spaceIndex = action.payload;
+      state.spaceName = mockSpace[state.spaceIndex];
+      return state;
+
     default:
       return state;
   }

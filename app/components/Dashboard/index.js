@@ -15,29 +15,39 @@ export default class Dashboard extends Component {
   constructor(props) {
     super(props);
 
+    this.onPageScrollStateChanged = this.onPageScrollStateChanged.bind(this);
     this.onPageSelected = this.onPageSelected.bind(this);
-    
+
     this.state = {
       currentPage: this.props.spaceIndex,
+      dragging: false,
     };
   }
 
-  onPageSelected(page) {
-    if (this.state.currentPage < page.position) {
-      this.props.showNextSpace();
-    } else if (this.state.currentPage > page.position) {
-      this.props.showPrevSpace();
+  onPageScrollStateChanged(scrollState) {
+    if (scrollState === 'dragging' && !this.state.dragging) {
+      this.setState({
+        dragging: true,
+      });
     }
+  }
 
-    this.setState({
-      currentPage: page.position,
-    });
+  onPageSelected(page) {
+    if (this.state.dragging) {
+      this.props.setSpaceIndex(page.position);
+
+      this.setState({
+        currentPage: page.position,
+        dragging: false,
+      });
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       currentPage: nextProps.spaceIndex,
     });
+
     this.viewPager.setPage(nextProps.spaceIndex);
   }
 
@@ -53,9 +63,10 @@ export default class Dashboard extends Component {
         <ViewPager
           style={styles.viewPager}
           initialPage={0}
+          onPageScrollStateChanged={this.onPageScrollStateChanged}
           onPageSelected={this.onPageSelected}
           scrollEnabled
-          ref={viewPager => {this.viewPager = viewPager}}>
+          ref={viewPager => { this.viewPager = viewPager }}>
           <View style={{ flex: 1 }}>
             <DashboadPage />
           </View>
