@@ -25,8 +25,10 @@ export default class PanelItem extends Component {
       this.props.value,
       this.props.unitText,
     ];
+    let marginStyle = (this.props.isLeft ? styles.panel_left : styles.panel_right);
+
     return (
-      <View style={styles.panel}>
+      <View style={[styles.panel, marginStyle]}>
         <View
           style={{
             flex: 1,
@@ -83,4 +85,5 @@ PanelItem.propTypes = {
   value: PropTypes.string,
   unitText: PropTypes.string,
   type: PropTypes.string,
+  isLeft: PropTypes.bool,
 };

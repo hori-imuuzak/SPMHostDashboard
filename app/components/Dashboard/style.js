@@ -56,15 +56,25 @@ export default styles = StyleSheet.create({
   },
 
   panelList: {
-    justifyContent: 'center',
     flexDirection: 'row',  
     flexWrap: 'wrap',
   },
 
   panel: {
+    flex: 1,
     backgroundColor: 'white',
-    width: 120,
     height: 80,
+    padding: 10,
+    marginTop: 8,
+    marginBottom: 8,
   },
+  panel_left: {
+    marginLeft: 8,
+    marginRight: 4,
+  },
+  panel_right: {
+    marginLeft: 4,
+    marginRight: 8,
+  }
 
 })

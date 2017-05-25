@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import {
   ListView,
 } from 'react-native';
+import styles from './style';
 
 import PanelItem from './PanelItem';
 
@@ -21,12 +22,15 @@ export default class PanelList extends Component {
   }
 
   renderRow(row) {
+    let index = this.props.panelValues.indexOf(row);
+    let isLeft = (index === 0);
     return (
       <PanelItem
         label={row.label}
         value={row.value}
         unitText={row.unitText}
         type={row.type}
+        isLeft={isLeft}
       />
     );
   }
@@ -34,7 +38,7 @@ export default class PanelList extends Component {
   render() {
     return (
       <ListView
-        style={styles.panelList}
+        contentContainerStyle={styles.panelList}
         renderRow={this.renderRow}
         dataSource={this.state.dataSource}
       />
