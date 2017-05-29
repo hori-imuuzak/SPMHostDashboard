@@ -10,6 +10,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
+  drawerHumberger: {
+    flex: 0.2,
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
+
   header: {
     flex: 1,
     flexDirection: 'row',

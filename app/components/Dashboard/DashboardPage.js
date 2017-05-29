@@ -3,6 +3,7 @@ import {
   ScrollView,
   View,
   Platform,
+  Animated,
 } from 'react-native';
 
 import Graph from '../../components/DummyGraph';
@@ -99,6 +100,22 @@ export default class DashboardPage extends Component {
     super(props);
 
     this.renderBottomDummyIOS = this.renderBottomDummyIOS.bind(this);
+
+    this.state = {
+      floatingValue: new Animated.Value(50),
+      opacityValue: new Animated.Value(0),
+    };
+  }
+
+  componentDidMount() {
+    Animated.timing(this.state.floatingValue, {
+      toValue: 0,
+      duration: 1000,
+    }).start();
+    Animated.timing(this.state.opacityValue, {
+      toValue: 1,
+      duration: 2000,
+    }).start();
   }
 
   renderBottomDummyIOS() {
@@ -114,19 +131,43 @@ export default class DashboardPage extends Component {
         style={{
           flex: 1,
         }}>
-        <Graph />
-        <PanelList
-          headerText={mockDashboard[0].headerText}
-          panelValues={mockDashboard[0].panelValues}
-        />
-        <PanelList
-          headerText={mockDashboard[1].headerText}
-          panelValues={mockDashboard[1].panelValues}
-        />
-        <PanelList
-          headerText={mockDashboard[2].headerText}
-          panelValues={mockDashboard[2].panelValues}
-        />
+        <Animated.View
+          style={{
+            paddingTop: this.state.floatingValue,
+            opacity: this.state.opacityValue,
+          }}>
+          <Graph />
+        </Animated.View>
+        <Animated.View
+          style={{
+            paddingTop: this.state.floatingValue,
+            opacity: this.state.opacityValue,
+          }}>
+          <PanelList
+            headerText={mockDashboard[0].headerText}
+            panelValues={mockDashboard[0].panelValues}
+          />
+        </Animated.View>
+        <Animated.View
+          style={{
+            paddingTop: this.state.floatingValue,
+            opacity: this.state.opacityValue,
+          }}>
+          <PanelList
+            headerText={mockDashboard[1].headerText}
+            panelValues={mockDashboard[1].panelValues}
+          />
+        </Animated.View>
+        <Animated.View
+          style={{
+            paddingTop: this.state.floatingValue,
+            opacity: this.state.opacityValue,
+          }}>
+          <PanelList
+            headerText={mockDashboard[2].headerText}
+            panelValues={mockDashboard[2].panelValues}
+          />
+        </Animated.View>
         {this.renderBottomDummyIOS()}
       </ScrollView>
     );
