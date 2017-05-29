@@ -12,10 +12,9 @@ const styles = StyleSheet.create({
   },
   
   iconItem: {
-    flex: 1,
-    maxHeight: 1,
-    backgroundColor: 'gray',
-    marginVertical: 4,
+    height: 2,
+    backgroundColor: '#999a',
+    marginVertical: 3,
   },
 });
 
